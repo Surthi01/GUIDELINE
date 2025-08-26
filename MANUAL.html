@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EZTest System - User Manual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      background: #f9f9f9;
+    }
+    nav {
+      width: 260px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+      transition: width 0.3s;
+    }
+    nav.collapsed {
+      width: 40px;
+      padding: 20px 5px;
+    }
+    nav h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      transition: opacity 0.3s;
+    }
+    nav.collapsed h2,
+    nav.collapsed ul li a {
+      opacity: 0;
+      pointer-events: none;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 10px 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    main {
+      margin-left: 280px;
+      padding: 25px;
+      flex: 1;
+      transition: margin-left 0.3s;
+    }
+    nav.collapsed ~ main {
+      margin-left: 60px;
+    }
+    h1 {
+      color: #34495e;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    ol, ul {
+      margin-left: 20px;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .highlight {
+      background: #ecf0f1;
+      padding: 10px;
+      border-left: 4px solid #2980b9;
+      margin: 10px 0;
+    }
+    .policy {
+      background: #fff8e1;
+      padding: 10px;
+      border-left: 4px solid #f39c12;
+      margin: 15px 0;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      transform: translateY(-50%);
+      background: #34495e;
+      color: white;
+      border-radius: 50%;
+      border: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    /* ✅ Styling Navigation Guidelines */
+    #nav-guidelines {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    #nav-guidelines ol {
+      margin: 0;
+      padding-left: 25px;
+    }
+
+    #nav-guidelines li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    #nav-guidelines li b {
+      color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">&#9664;</button>
+    <h2>EZTest System</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#login">Login Guide</a></li>
+      <li><a href="#forgot-password">Forgot Password</a></li>
+      <li>
+		<details>
+			<summary><a href="#nav-guidelines">Menu</a></summary>
+			<ul>
+				<li><a href="#next-date">Next Date Management</a></li>
+				<li><a href="#ongoing-cases">On Going Cases</a></li>
+				<li><a href="#user-management">User Management</a></li>
+				<li><a href="#payment-listing">Payment Listing</a></li>
+				<li><a href="#office-expenses">Office Expenses</a></li>
+				<li><a href="#groups-rights">Groups & Rights</a></li>
+			</ul>
+		</details>
+	  </li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Section -->
+  <main>
+    <section id="intro">
+      <h1>Introduction</h1>
+      <p>The <b>EZTest System</b> is a secure, web-based platform designed to streamline legal and administrative workflows. 
+      It provides authorized users with a centralized space to manage case-related information, perform administrative tasks, 
+      and access essential legal data anytime, anywhere.</p>
+
+      <p>The system was developed with the goals of:</p>
+      <ul>
+        <li><b>Efficiency:</b> Simplifying processes such as case review, reporting, and document handling.</li>
+        <li><b>Accessibility:</b> Enabling users to log in from any device with internet access, without additional software installation.</li>
+        <li><b>Security:</b> Ensuring that sensitive legal and administrative data is protected with secure login and role-based access control.</li>
+        <li><b>Accuracy:</b> Reducing errors by providing structured forms, standardized workflows, and automated updates.</li>
+      </ul>
+
+      <p>Whether you are an administrator managing system users or a legal professional reviewing case details, the EZTest System 
+      is designed to improve your productivity while maintaining compliance and security.</p>
+    </section>
+
+    <section id="login">
+      <h1>Login Guide</h1>
+      <img src="GUIDELIBRARY.png" alt="Login Guide" style="max-width:100%; height:auto; margin:15px 0; border:1px solid #ccc; border-radius:6px;">
+      <p>Follow these steps to log in to the EZTest System:</p>
+      <ol>
+        <li>Open the login page: 
+          <a href="http://52.220.139.91/eztest/login.aspx" target="_blank">
+            http://52.220.139.91/eztest/login.aspx
+          </a>
+        </li>
+        <li>Enter your <b>Username</b> (ex:<code>Surthikkaa01</code>).</li>
+        <li>Enter your <b>Password</b>.</li>
+        <li>Select your <b>Module</b> from the dropdown (Admin Module, Lawyer Module).</li>
+        <li>Click <b>Login</b> to access the system.</li>
+      </ol>
+
+      <div class="policy">
+        🔒 <b>Password Requirements:</b>
+        <ul>
+          <li>Must be between <b>8 – 16 characters</b>.</li>
+          <li>Must include at least one uppercase letter (A–Z).</li>
+          <li>Must include at least one lowercase letter (a–z).</li>
+          <li>Must include at least one number (0–9).</li>
+          <li>Must include at least one special character (e.g., @, #, $, %).</li>
+        </ul>
+      </div>
+
+      <div class="highlight">
+        💡 <b>Tip:</b> If you forget your password, click on <i>Forgot Password</i> to reset it.
+      </div>
+    </section>
+
+    <!-- Forgot Password Section -->
+    <section id="forgot-password">
+      <h1>Forgot Password Guide</h1>
+      <img src="ForgetPassword.png" alt="Login Guide" style="max-width:100%; height:auto; margin:15px 0; border:1px solid #ccc; border-radius:6px;">
+      <p>If you forget your password, follow these steps to reset it:</p>
+      <ol>
+        <li>On the <b>Login Page</b>, click <i>Forgot Password</i>.</li>
+        <li>You will be redirected to the <b>Forgot Password</b> page.</li>
+        <li>Enter your <b>Username</b> in the field provided.</li>
+        <li>Enter your registered <b>Email address</b> associated with your account.</li>
+        <li>Click the <b>Submit</b> button (green) to proceed.</li>
+        <li>An email will be sent to your registered email address with instructions on how to reset your password.</li>
+        <li>Follow the link in the email and set a new password according to the <b>Password Requirements</b>.</li>
+      </ol>
+      <div class="highlight">
+        ⚠️ <b>Note:</b> If you do not receive the reset email, check your spam/junk folder or contact 
+        <a href="mailto:support@eztest.com">support@eztest.com</a>.
+      </div>
+    </section>
+
+    <!-- Navigation Guidelines Section -->
+    <section id="nav-guidelines">
+      <h1>📑 EZLegal System – Menu</h1>
+      <p>The sidebar menu in the EZLegal System provides access to key modules for effective case, user, and financial management.</p>
+      <img src="CONTENTS.png" alt="Login Guide" style="max-width:100%; height:auto; margin:15px 0; border:1px solid #ccc; border-radius:6px;">
+	  <ol>
+        <li><b>Next Date Management</b> – Track and manage upcoming hearings or important legal deadlines.</li>
+        <li><b>On Going Cases</b> – View, monitor, and search all active or pending cases.</li>
+        <li><b>User Management</b> – Create, update, and assign roles to system users.</li>
+        <li><b>Payment Listing</b> – Track payments, generate summaries, and link to cases.</li>
+        <li><b>Office Expenses</b> – Record, categorize, and monitor operational costs.</li>
+        <li><b>Groups & Rights</b> – Manage user groups and define access permissions.</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h1>Frequently Asked Questions (FAQ)</h1>
+      <p><b>Q:</b> What if I enter the wrong password?<br>
+      <b>A:</b> You will see an error message. Try again or use the <i>Forgot Password</i> option.</p>
+      
+      <p><b>Q:</b> Can I access the system from my phone?<br>
+      <b>A:</b> Yes, the system is web-based and works on both desktop and mobile devices.</p>
+    </section>
+
+    <section id="support">
+      <h1>Support</h1>
+      <p>If you face issues while using the EZTest System, please contact support:</p>
+      <ul>
+        <li>Email: <a href="mailto:support@eztest.com">support@eztest.com</a></li>
+        <li>Phone: +60-123-456-789</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      toggleBtn.innerHTML = sidebar.classList.contains("collapsed") ? "&#9654;" : "&#9664;";
+    });
+  </script>
+
+</body>
+</html>
